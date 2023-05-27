@@ -12,11 +12,9 @@ The system is built using python libraries and frontend created HTML, CSS, Boots
  ![image](https://github.com/Bala-V22/Bar-code-attendance-management-system-using-django/assets/134045414/d666538b-a468-4315-9df3-c2c9a1cd0a2a)
 &nbsp;
 &nbsp;
-![image](https://github.com/Bala-V22/Bar-code-attendance-management-system-using-django/assets/134045414/8ef26dc5-8f8c-4e15-a7ba-5a36cd9b98c9)
-&nbsp;
-&nbsp;
+![image](https://github.com/Bala-V22/Bar-code-attendance-management-system-using-django/assets/134045414/a5fd3082-01e9-4297-9e0d-408241d9fe92)
 
-![image](https://github.com/Bala-V22/Bar-code-attendance-management-system-using-django/assets/134045414/3fb1ca55-a11b-4d31-b8ae-4cd366d9d11a)
+![image](https://github.com/Bala-V22/Bar-code-attendance-management-system-using-django/assets/134045414/8ef26dc5-8f8c-4e15-a7ba-5a36cd9b98c9)
 &nbsp;
 &nbsp;
 
