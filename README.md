@@ -2,7 +2,7 @@
 
 The bar code attendance management system is used to make attendance easily and efficent then all student attendance details stored and staff manual also give attendance. and long day abbsent and 3 days absent list also show separately.
 
-The system is built using python libraries and frontend created HYML, CSS, Bootstrap and Java script. Django framework is used to develop the front end for the system. I am give some project screen shot.
+The system is built using python libraries and frontend created HTML, CSS, Bootstrap and Java script. Django framework is used to develop the front end for the system. I am give some project screen shot.
 
 
 
