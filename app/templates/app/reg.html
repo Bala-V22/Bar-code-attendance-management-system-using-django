@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Face Attentance System Using django</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <style>
+       
+        .hole{
+            position: absolute;
+            left: 40%;
+            top: 44%;
+            display: flex;
+            
+        }
+
+        button{
+            padding: 10px 30px;
+            margin: 25px;
+            background-color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: medium;
+            cursor: pointer;
+            transition: 0.5s;
+            
+        }
+
+        button:hover{
+            background-color:#00eeff;
+            color: white;
+        }
+
+        </style>
+
+<body>
+    <div class="hole">
+<form action="/staff">
+    <button type="submit"><b>Staff</b></button>
+</form>
+<form action="/add_stu">
+    <button type="submit"><b>Student</b></button>
+</form>
+</div>
+</body>
+</html>
+
+{% endblock %}

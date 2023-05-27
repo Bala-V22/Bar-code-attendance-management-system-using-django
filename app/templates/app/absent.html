@@ -1,0 +1,87 @@
+
+
+{%extends "base.html" %}
+{% block head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/css/style_conference.css' %}">
+    <style>
+      #a {background-color: rgb(184, 236, 227);}
+    </style>
+    {% endblock %}
+{% block content %}
+<div id="a">
+<form type="get" action="." style="margin: 0">
+  Enter Date: <input id="search_submit" type="date" name="search_box">
+  <button id="search_submit" type="submit" >Submit</button>
+</form>
+<br><h1 style="color:rgb(79, 188, 205)"><b><i><center>ABSENT LIST</center></i></b></h1>
+<strong>Date: {{ date|date:"D, d M, Y" }}</strong>
+    <div id="divPaperMainContainer">
+        <div id="divPaperListContainer" class="divChildHalfSpace">
+          <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for name.." style="float: right; padding: 10px;"> 
+            <table cellspacing="10" id="myTable" class="table" style="width: 1000px; margin-left: 180px; margin-top: 33px; background:rgb(35, 215, 185);" id="table ">
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                      Send Mail
+                    </th>
+                    
+                </tr>
+                {% for det in det_list %}
+
+                        <tr>
+                          <td>{{det.id}}</td>
+                          <td>{{det.name}}</td>
+                          <td>{{det.email}}</td>
+                          <td><form type="get" action="send_mail" style="margin: 0">
+                              <!-- send mail: <input id="search_submit" type="text" name="send mail" value={{det.email}}> -->
+                              <!-- <button type="submit" name='mybtn2' value={{excel_path}}>Download results in Excel</button> -->
+                              <button  type="submit" name="send mail" value={{det.email}} id="search_submit">Submit</button>
+                          </form></td>
+
+                        </tr>
+
+
+                {% endfor %}
+            </table>
+
+        </div>
+        <form type="get" action="." style="margin: 0">
+          <!-- send mail: <input id="search_submit" type="text" name="send mail" value={{det.email}}> -->
+          <!-- <button type="submit" name='mybtn2' value={{excel_path}}>Download results in Excel</button> -->
+          <button  type="submit" name="all mail" value='all_mail' id="search_submit">send absent all</button>
+      </form>
+        
+
+    </div>
+  </div>
+    <script>
+      function myFunction() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[1];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+  </script>
+{% endblock %}

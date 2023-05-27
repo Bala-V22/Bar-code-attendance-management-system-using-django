@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Face Attentance System Using django</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <style>
+        
+        body{
+            background: url("https://cdn.statically.io/img/attendlab.com/f=auto/wp-content/uploads/2019/08/slider-bg0.jpg")  100% no-repeat fixed;
+        } 
+        .btn-primary {
+            color: #fff;
+            background-color: #6786a7;
+            border-color: #007bff;
+            font-style: oblique;
+        }   
+        .navbar-brand {
+            display: inline-block;
+            padding-top: 0.3125rem;
+            padding-bottom: 0.3125rem;
+            margin-right: 35rem;
+            font-size: 1.25rem;
+            line-height: inherit;
+            white-space: nowrap;
+        }
+        .navbar {
+            position: relative;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -ms-flex-align: center;
+            align-items: center;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+        }
+       
+            
+    </style>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-lg-2">
+                <a class="navbar-brand" href="#!">Barcode Attentance System</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'add_emp' %}">Register</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'train_model' %}">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="py-5">
+            <div class="container px-lg-5">
+                <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+                    <div class="m-4 m-lg-5">
+                        <h1 class="display-5 fw-bold" style="font-style: italic;">Touchless Barcode Recognition</h1><br><br>
+                        <p class="fs-4">Touchless Attentance such as Barcode Attentance, keep people moving faster and reduce the number of surfaces touched to get access or track time. This enables leaders to make smart decisions in managing a distributed workforce skillfully using data and analytics.</p>
+                        <br>
+                        <a class="btn btn-primary btn-lg" href="{% url 'identify' %}">Take Attentance</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Page Content-->
+        <br><br><br><br><br>
+        <footer class="py-3 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">secure face attentance recognition !!!</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
+
+{% endblock %}

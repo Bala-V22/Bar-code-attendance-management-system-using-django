@@ -1,0 +1,67 @@
+
+
+
+
+
+
+{%extends "base.html" %}
+{% block head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/css/style_conference.css' %}">
+    <style>
+      #divPaperMainContainer{background-color: rgb(9, 52, 99);}
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div id="divPaperMainContainer">
+        <div id="divPaperListContainer" class="divChildHalfSpace">
+            <br><h1 style="color:rgb(79, 188, 205)"><b><i><center>LONG ABSENTIES</center></i></b></h1>
+            
+            <table cellspacing="10" id="myTable" class="table" style="width: 1000px; margin-left: 180px; margin-top: 33px; background:white;" id="table ">
+              <thead class="thead-dark">
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                      Send Mail
+                  </th>
+                    
+                </tr>
+              </thead>
+              </tbody>
+                {% for det in det_list %}
+
+                        <tr>
+                          <td>{{det.id}}</td>
+                          <td>{{det.name}}</td>
+                          <td>{{det.email}}</td>
+                          <td><form type="get" action="send_mail" style="margin: 0">
+                              <!-- send mail: <input id="search_submit" type="text" name="send mail" value={{det.email}}> -->
+                              <!-- <button type="submit" name='mybtn2' value={{excel_path}}>Download results in Excel</button> -->
+                              <button  type="submit" name="send mail" value={{det.email}} id="search_submit">Submit</button>
+                          </form></td>
+
+                        </tr>
+
+
+                {% endfor %}
+              </tbody>
+            </table>
+            <br><br>
+
+        </div>
+        
+
+    </div>
+
+
+{% endblock %}

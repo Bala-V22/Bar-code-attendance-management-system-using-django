@@ -1,0 +1,75 @@
+
+
+
+
+{%extends "base.html" %}
+{%block content%}
+
+
+
+{% load static %}
+
+<h1 style="font-family: 'Times New Roman'; margin-left: 646px; margin-top: 20px" >STUDENT DETAILS</h1>
+<div class='row'>
+  <div class='column side'>
+    <div class="card" style="width: 18rem; text-justify">
+      <img class="card-img-top" src="{% static "img/barcode-1.jpg" %}" alt="event">
+      <div class="card-body">
+        <h5 class="card-title">Student Management system using Barcode Attendance</h5>
+        <p class="card-text text-justify">
+          Touchless Attentance such as Barcode Attentance, keep people moving faster and reduce the number of surfaces touched to get access or track time. This enables leaders to make smart decisions in managing a distributed workforce skillfully using data and analytics.
+        </p>
+        <a href="https://barcode.tec-it.com/en" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">what for</a>
+      </div>
+    </div>
+  </div>
+  <div class="column table">
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for id.." style="float: right;padding: 10px;">
+    <table class="table" id="myTable" style="width: 1000px; margin-left: 10px; margin-top: 33px;">
+      <thead>
+        <tr style="background-color:#D6EEEE;">
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Photo</th>
+          <th scope="col">Email</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        {% for emp in emp_list %}
+        <tr>
+          <td>{{emp.id}}</td>
+          <td><a href="{% url 'create_barcode' emp.id %}">{{emp.name}}</a></td>
+          <td>{{emp.num_photos}}</td>
+          <td>{{emp.email}}</td>
+
+        </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+  </div>  
+</div>
+
+
+<script>
+  function myFunction() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }       
+    }
+  }
+</script>
+
+{%endblock%}

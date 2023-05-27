@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+
+    .box{
+        margin-left: 40%;
+        margin-top: 15%;  
+        position: absolute; 
+        top: 2%;    
+    }
+
+    input[type='number']{
+        width: 250px;
+        /* border: none; */
+        border-radius: 5px;
+        height: 35px;
+    }
+
+    input[type='number']:focus{
+        border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+    }
+
+
+    textarea{
+        width: 250px;
+        /* border: none; */
+        border-radius: 5px;
+        /* height: 35px; */
+    }
+
+    button{
+        margin-left: 20% ;
+        margin-top: 5%;
+        width: 130px;
+        height: 50px;
+        border-radius: 10px;
+        border: none;
+        transition: 0.10ms step-end;
+    }
+
+    button:hover{
+        cursor: pointer;
+        background-color: rgb(18, 203, 196);
+        color: beige;
+    }
+</style>
+
+<div class='column side'>
+    <div class="card" style="width: 18rem; text-justify">
+      <img class="card-img-top" src="{% static "img/complain.jpg" %}" alt="event">
+      <div class="card-body">
+        <h5 class="card-title">Student complain box for Barcode Attendance</h5>
+        <p class="card-text text-justify">
+            A complaint is anything wrong and problem with reasons that the filing here and send. We sufficient to support a claim and solve your issues.
+        </p>
+        <!-- <a href="https://barcode.tec-it.com/en" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">what for</a> -->
+      </div>
+    </div>
+    <form action="/back">
+<div class="box">
+    <label for="" style="padding-right: 95px;"><h4>Your ID</h4></label>     <input type="number"><br><br>
+    <label for="" style="padding-right: 50px;"><h5>Complain Box</h5></label>     <textarea name="" id="" cols="30" rows="4"></textarea><br>
+    <button><b>Submit</b></button>
+</div>
+</form>
+
+{% endblock %}
